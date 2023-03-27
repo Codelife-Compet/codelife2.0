@@ -1,4 +1,5 @@
 import { FaInstagram } from "react-icons/fa";
+import styles from "@/styles/Home.module.css";
 interface InstagramIconProps {
   size?: string | number;
   id?: string
@@ -6,9 +7,9 @@ interface InstagramIconProps {
 
 function InstagramIcon({ size = 24, id }: InstagramIconProps) {
   return (
-    <div className="inline-block">
-      <div className="instagram-icon flex items-center cursor-pointer text-xl text-codelife-black-400 fill-codelife-black-400 hover:bg-gradient-to-r from-instagram-0 via-instagram-1 to-instagram-2 bg-clip-text hover:text-opacity-0">
-        <svg width={size} height={size} className="instagram-icon">
+    <div className={styles["instagram-icon-container"]}>
+      <div className={styles["instagram-icon"]}>
+        <svg width={size} height={size} className={styles["instagram-icon"]}>
           <defs>
             <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#596161" />
@@ -20,7 +21,7 @@ function InstagramIcon({ size = 24, id }: InstagramIconProps) {
               <stop offset="100%" stopColor="#F43F5E" />
             </linearGradient>
           </defs>
-          <FaInstagram className="instagram-gradient cursor-pointer" fontSize={size} />
+          <FaInstagram className={`${styles["instagram-gradient"]} `} fontSize={size} />
         </svg>
         {id && <span className="hidden px-2 sm:block "> {id}</span>}
       </div>
