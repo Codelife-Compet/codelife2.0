@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaYoutube, FaFacebookSquare } from "react-icons/fa"
 import CompetIcon from "./CompetIcon";
-import InstagramIcon from "./InstagramIcon";
+import Socials from "./Socials";
 function Footer() {
   return (
     <footer className="bg-codelife-black-500 bottom-0 w-full mt-auto p-8">
@@ -34,17 +33,16 @@ function Footer() {
           </div>
         </nav>
         <div className="flex justify-around pt-4">
-          {/* REDES SOCIAIS */}
-          <div className="grid grid-cols-2 gap-1">
-            <div className="border-r border-codelife-black-400 flex items-center justify-end pr-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-1">
+            <div className="border-r border-codelife-black-400 flex items-center justify-around pr-4 sm:col-span-1">
               <Link href={"https://www.datawheel.us/"} target="_blank">
-                <span className="text-xl font-medium flex justify-center text-codelife-zinc-500 ">
+                <span className="text-md font-medium flex justify-center text-codelife-zinc-500 ">
                   Criado por :
                 </span>
                 <Image src="/datawheel.svg" alt="Logotipo da Datawheel" width={160} height={160} className="opacity-80 hover:opacity-100 cursor-pointer" />
               </Link>
             </div>
-            <div className="px-4 grid grid-cols-1 grid-rows-4 gap-1 sm:grid-cols-2 sm:grid-rows-2 text-codelife-zinc-500">
+            <div className="px-4 grid grid-cols-1 grid-rows-4 gap-1 sm:grid-cols-2 sm:grid-rows-2 text-codelife-zinc-500 sm:col-start-2 sm:col-end-4">
               <div className="flex justify-center items-center">
                 <span className=" text-sm font-thin">Governo do Estado de Minas Gerais</span>
               </div>
@@ -58,10 +56,10 @@ function Footer() {
                   <Image src="/innpact.svg" alt="Logotipo da Innpact" height={160} width={160} className=" opacity-80 hover:opacity-100 cursor-pointer " />
                 </Link>
               </div>
-              <Link href="https://compet.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center opacity-80 hover:opacity-100 cursor-pointer px-2 ">
-                <i className="flex items-center w-40">
-                  <CompetIcon />
-                  <span className="text-md text-codelife-zinc-400 font-roboto font-medium pl-2">Compet | Cefet - MG</span>
+              <Link href="https://compet.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center opacity-80 hover:opacity-100 cursor-pointer">
+                <i className="grid grid-cols-3 items-center justify-items-center">
+                  <CompetIcon className="col-span-1 w-10 sm:w-30"/>
+                  <span className="text-sm text-codelife-zinc-400 font-merry pl-2 col-start-2 col-end-4">Compet | Cefet - MG</span>
                 </i>
               </Link>
             </div>
@@ -70,29 +68,13 @@ function Footer() {
 
       </div>
       <div className="border-t-codelife-zinc-400 border-t-[1px]" />
-      <div className="grid grid-cols-3 gap-2 pt-4">
-        <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-500">
-          <Link href={"https://www.facebook.com/CodeLifeBR/"} target="_blank">
-            <div className="flex items-center  hover:text-codelife-blue-500 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-500">
-              <FaFacebookSquare className="px-2 text-[3rem]" />
-              <span className="hidden sm:block">/CodelifeBR</span>
-            </div>
-          </Link>
-        </i>
-        <i className="px-2  transition-opacity flex justify-center items-center hover:text-codelife-red-500">
-          <Link href={"https://www.youtube.com/channel/UCR6iTxyV9jdSy21eqS1Ovyg"} target="_blank" >
-            <div className="flex items-center hover:text-codelife-red-500 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-red-500">
-              <FaYoutube className="px-2 text-[4rem]" />
-              <span className="hidden sm:block"> @CodelifeBR</span>
-            </div>
-          </Link>
-        </i>
-        <i className="px-2 transition-opacity flex justify-center items-center">
-          <Link href="https://www.instagram.com/codelifebr/" target="_blank" >
-            <InstagramIcon size={40} />
-          </Link>
-        </i>
-      </div>
+      <Socials
+        size="sm"
+        facebook={{ id: "/CodelifeBR", link: "https://www.facebook.com/CodeLifeBR/" }}
+        youtube={{ id: "@CodelifeBR", link: "https://www.youtube.com/channel/UCR6iTxyV9jdSy21eqS1Ovyg" }}
+        instagram={{ id: "@CodelifeBR", link: "https://www.instagram.com/codelifebr/" }}
+        
+      />
     </footer >);
 }
 
