@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebookSquare, FaGithubSquare, FaLinkedin, FaTwitterSquare, FaYoutube } from "react-icons/fa";
 import InstagramIcon from "./InstagramIcon"
+import styles from "@/styles/Home.module.css";
 interface social {
     link: string
     id?: string
@@ -24,32 +25,32 @@ const Socials: React.FC<SocialProps> = ({
     twitter,
     youtube }) => {
     return (
-        <div className="grid grid-flow-col gap-2 pt-4">
+        <div className={styles["socials-inner-container"]}>
             {
                 facebook &&
-                <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-500">
+                <i className={`${styles["socials-icon-container"]} ${styles.facebook}`}>
                     <Link href={facebook.link} target="_blank">
-                        <div className="flex items-center  hover:text-codelife-blue-500 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-500">
+                        <div className={`${styles.facebook}`}>
                             <FaFacebookSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {facebook.id&&<span className="hidden sm:block">{facebook.id}</span>}
+                            {facebook.id && <span className="hidden sm:block">{facebook.id}</span>}
                         </div>
                     </Link>
                 </i>
             }
             {
                 youtube &&
-                <i className="px-2  transition-opacity flex justify-center items-center hover:text-codelife-red-500">
+                <i className={`${styles["socials-icon-container"]} ${styles.youtube}`}>
                     <Link href={youtube.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-red-500 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-red-500">
+                        <div className={`${styles.youtube}`}>
                             <FaYoutube className={`px-2 ${size == "sm" ? "text-[3rem]" : size == "md" ? "text-[4rem]" : "text-[6rem]"}`} />
-                            {youtube.id&&<span className="hidden sm:block"> {youtube.id}</span>}
+                            {youtube.id && <span className="hidden sm:block"> {youtube.id}</span>}
                         </div>
                     </Link>
                 </i>
             }
             {
                 instagram &&
-                <i className="px-2 transition-opacity flex justify-center items-center">
+                <i className={`${styles["socials-icon-container"]}`}>
                     <Link href={instagram.link} target="_blank" >
                         <InstagramIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} id={instagram.id} />
                     </Link>
@@ -57,33 +58,33 @@ const Socials: React.FC<SocialProps> = ({
             }
             {
                 github &&
-                <i className="px-2  transition-opacity flex justify-center items-center hover:text-codelife-black-900">
+                <i className={`${styles["socials-icon-container"]} ${styles.github}`}>
                     <Link href={github.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-black-900 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-black-900">
+                        <div className={`${styles.github}`}>
                             <FaGithubSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {github.id&&<span className="hidden sm:block">{github.id}</span>}
+                            {github.id && <span className="hidden sm:block">{github.id}</span>}
                         </div>
                     </Link>
                 </i>
             }
             {
                 linkedin &&
-                <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-600">
+                <i className={`${styles["socials-icon-container"]} ${styles.linkedin}`}>
                     <Link href={linkedin.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-blue-600 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-600">
+                        <div className={`${styles.linkedin}`}>
                             <FaLinkedin className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {linkedin.id&&<span className="hidden sm:block">{linkedin.id}</span>}
+                            {linkedin.id && <span className="hidden sm:block">{linkedin.id}</span>}
                         </div>
                     </Link>
                 </i>
             }
             {
                 twitter &&
-                <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-400">
+                <i className={`${styles["socials-icon-container"]} ${styles.twitter}`}>
                     <Link href={twitter.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-blue-400 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-400">
+                        <div className={`${styles.twitter}`}>
                             <FaTwitterSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {twitter.id&&<span className="hidden sm:block">{twitter.id}</span>}
+                            {twitter.id && <span className="hidden sm:block">{twitter.id}</span>}
                         </div>
                     </Link>
                 </i>
