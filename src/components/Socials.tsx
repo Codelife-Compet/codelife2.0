@@ -1,8 +1,11 @@
-import Link from "next/link";
 import React from "react";
-import { FaFacebookSquare, FaGithubSquare, FaLinkedin, FaTwitterSquare, FaYoutube } from "react-icons/fa";
 import InstagramIcon from "./InstagramIcon"
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Socials.module.css";
+import FacebookIcon from "./FacebookIcon";
+import GithubIcon from "./GithubIcon";
+import YoutubeIcon from "./YoutubeIcon";
+import LinkedinIcon from "./LinkedinIcon";
+import TwitterIcon from "./TwitterIcon";
 interface social {
     link: string
     id?: string
@@ -29,64 +32,64 @@ const Socials: React.FC<SocialProps> = ({
             {
                 facebook &&
                 <i className={`${styles["socials-icon-container"]} ${styles.facebook}`}>
-                    <Link href={facebook.link} target="_blank">
+                    <a href={facebook.link} target="_blank">
                         <div className={`${styles.facebook}`}>
-                            <FaFacebookSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {facebook.id && <span className="hidden sm:block">{facebook.id}</span>}
+                            <FacebookIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {facebook.id && <span className="hidden sm:block pl-2">{facebook.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 youtube &&
                 <i className={`${styles["socials-icon-container"]} ${styles.youtube}`}>
-                    <Link href={youtube.link} target="_blank" >
+                    <a href={youtube.link} target="_blank" >
                         <div className={`${styles.youtube}`}>
-                            <FaYoutube className={`px-2 ${size == "sm" ? "text-[3rem]" : size == "md" ? "text-[4rem]" : "text-[6rem]"}`} />
-                            {youtube.id && <span className="hidden sm:block"> {youtube.id}</span>}
+                            <YoutubeIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {youtube.id && <span className="hidden sm:block pl-2"> {youtube.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 instagram &&
                 <i className={`${styles["socials-icon-container"]}`}>
-                    <Link href={instagram.link} target="_blank" >
+                    <a href={instagram.link} target="_blank" >
                         <InstagramIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} id={instagram.id} />
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 github &&
                 <i className={`${styles["socials-icon-container"]} ${styles.github}`}>
-                    <Link href={github.link} target="_blank" >
+                    <a href={github.link} target="_blank" >
                         <div className={`${styles.github}`}>
-                            <FaGithubSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {github.id && <span className="hidden sm:block">{github.id}</span>}
+                            <GithubIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {github.id && <span className="hidden sm:block pl-2">{github.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 linkedin &&
                 <i className={`${styles["socials-icon-container"]} ${styles.linkedin}`}>
-                    <Link href={linkedin.link} target="_blank" >
+                    <a href={linkedin.link} target="_blank" >
                         <div className={`${styles.linkedin}`}>
-                            <FaLinkedin className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {linkedin.id && <span className="hidden sm:block">{linkedin.id}</span>}
+                            <LinkedinIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {linkedin.id && <span className="hidden sm:block pl-2">{linkedin.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 twitter &&
                 <i className={`${styles["socials-icon-container"]} ${styles.twitter}`}>
-                    <Link href={twitter.link} target="_blank" >
+                    <a href={twitter.link} target="_blank" >
                         <div className={`${styles.twitter}`}>
-                            <FaTwitterSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {twitter.id && <span className="hidden sm:block">{twitter.id}</span>}
+                            <TwitterIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {twitter.id && <span className="hidden sm:block pl-2">{twitter.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
         </div>
