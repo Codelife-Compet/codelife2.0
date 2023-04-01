@@ -15,9 +15,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-codelife-green-500 w-full h-[100vh] flex flex-col">
+      <main className="bg-codelife-green-500 w-full h-[100vh] flex flex-col dark:bg-codelife-black-600">
         <h1 className='font-merry text-codelife-black-600 text-5xl font-bold '>Aprenda a desenvolver websites</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
+        <p className='mb-8'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
         <Footer />
       </main>
     </>

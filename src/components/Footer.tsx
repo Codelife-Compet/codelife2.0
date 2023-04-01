@@ -1,7 +1,7 @@
 import Link from "next/link";
 import CompetIcon from "./CompetIcon";
 import Socials from "./Socials";
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Footer.module.css'
 function Footer() {
   return (
     <footer className={styles.footer}>
