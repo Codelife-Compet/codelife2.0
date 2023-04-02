@@ -2,29 +2,29 @@ import Link from "next/link";
 import CompetIcon from "./CompetIcon";
 import Socials from "./Socials";
 import styles from '@/styles/Footer.module.css'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { AuthContext } from "@/context/auth/AuthContext";
+import { UserPermissions } from "@/@types/user";
 function Footer() {
   const [hydrated, setHydrated] = useState(false);
-  const [user,setUser]=useState()
+  const { user, signIn: signUp } = useContext(AuthContext)
   useEffect(() => {
     setHydrated(true);
   }, []);
   const { t } = useTranslation()
-
-
   return (
     hydrated ?
       (<footer className={styles.footer}>
         <div className={styles["inner-footer"]}>
-          <nav role={"navigation"} className={user?styles["nav-4-links-footer"]:styles["nav-3-links-footer"]}>
+          <nav role={"navigation"} className={user ? styles["nav-4-links-footer"] : styles["nav-3-links-footer"]}>
             <div className={styles["nav-footer-section"]}>
               <h3>{t("About ")}</h3>
               <ul>
                 <li><Link href="">{t("About")}</Link></li>
-                <li><Link href="">{ t("Privacy Policy")}</Link></li>
-                <li><Link href="">{ t("Partners")}</Link></li>
-                <li><Link href="">{ t("Contact")}</Link></li>
+                <li><Link href="">{t("Privacy Policy")}</Link></li>
+                <li><Link href="">{t("Partners")}</Link></li>
+                <li><Link href="">{t("Contact")}</Link></li>
               </ul>
             </div>
             <div className={styles["nav-footer-section"]}>
@@ -32,13 +32,29 @@ function Footer() {
               <ul>
                 <li><Link href="">{t("Lesson plan")}</Link></li>
                 <li><Link href="">{t("Glossary")}</Link></li>
+                {user?.permission !== UserPermissions.regular &&
+                  <li><Link href="">{t("Leaderboard")}</Link></li>
+                }
               </ul>
             </div>
+            {user &&
+              <div className={styles["nav-footer-section"]}>
+                <h3>{t("Account")}</h3>
+                <ul>
+                  <li><Link href="">{t("My Profile")}</Link></li>
+                  <li><Link href="">{t("My Projects")}</Link></li>
+                  {user?.permission !== UserPermissions.regular &&
+                    <li><Link href="" onClick={() => /*logout()*/null}>{t("Admin")}</Link></li>
+                  }
+                  <li><Link href="" onClick={() => /*logout()*/null}>{t("Log out")}</Link></li>
+                </ul>
+              </div>
+            }
             <div className={styles["nav-footer-section"]}>
               <h3>{t("Language")}</h3>
               <ul>
                 <li><Link href="/" locale="en">{t("English")}</Link></li>
-                <li><Link href="/" locale ="pt-BR">{t("Portuguese")}</Link></li>
+                <li><Link href="/" locale="pt-BR">{t("Portuguese")}</Link></li>
 
               </ul>
             </div>
@@ -87,9 +103,10 @@ function Footer() {
             facebook={{ id: "/CodelifeBR", link: "https://www.facebook.com/CodeLifeBR/" }}
             youtube={{ id: "@CodelifeBR", link: "https://www.youtube.com/channel/UCR6iTxyV9jdSy21eqS1Ovyg" }}
             instagram={{ id: "@CodelifeBR", link: "https://www.instagram.com/codelifebr/" }}
-
           />
         </div>
+        <button onClick={() => signUp({ email: "teste@teste.com", password: "123456" })
+        }>login</button>
       </footer >) : <></>);
 }
 

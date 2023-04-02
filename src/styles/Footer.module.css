@@ -1,5 +1,5 @@
 .footer {
-  @apply mt-auto bottom-0 w-[100%] bg-codelife-black-500;
+  @apply mt-auto bottom-0 w-[100%] bg-codelife-black-600;
 }
 
 .footer:before {
@@ -81,13 +81,12 @@
 }
 
 .nav-footer-section li {
-  color: #3bd9cc;
-  font-weight: 500;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   opacity: 0.8;
   border-bottom-width: 1px;
   border-color: #596161;
+  @apply font-roboto text-lg text-codelife-green-500 transition-opacity;
 }
 
 @media (min-width: 640px) {
