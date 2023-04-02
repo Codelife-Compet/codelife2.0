@@ -13,7 +13,7 @@
   top: -50px;
   /* position bg image above .footer background */
   /* background sizing and default image */
-  background-image: url("/ground.png");
+  background-image: url("/img/ground.png");
   background-size: contain;
   background-position: -10% bottom;
   background-repeat: repeat-x;
@@ -35,32 +35,33 @@
 
 
 
-.nav-links-footer {
+.nav-4-links-footer,.nav-3-links-footer,{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-
-
 }
 
 @media (min-width: 768px) {
-  .nav-links-footer {
+  .nav-4-links-footer,.nav-3-links-footer {
       gap: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .nav-links-footer {
-
+  .nav-4-links-footer,.nav-3-links-footer {
       gap: 2rem;
   }
 }
 
 @media (min-width: 640px) {
-  .nav-links-footer {
+  .nav-4-links-footer {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .nav-3-links-footer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  
   }
 }
 
