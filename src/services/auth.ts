@@ -10,6 +10,8 @@ interface SignInResponse {
 }
 interface RecoverRequestData {
   token: string
+}interface RecoverResponseData {
+  user: User
 }
 const delay = (amount = 750) => new Promise(resolve => setTimeout(resolve, amount))
 /* Mock the SignIn route from the backend */
@@ -29,14 +31,14 @@ export async function signInRequest(data: SignInRequestData): Promise<SignInResp
 }
 /* Mock the route that return the info of a token creation like the user,
  the timestamp or whatever you want*/
-export async function recoverUserInformation(data: RecoverRequestData): Promise<User> {
+export async function recoverUserInformation(data: RecoverRequestData): Promise<RecoverResponseData> {
   await delay()
   // Recover logic (using fetch or axios...)
-  return {
-
+  const user = {
     name: "henrique",
     email: "tec.henriquedepaula@gmail.com",
     permission: UserPermissions.regular,
     avatar_url: "https://github.com/bidwolf.png"
   }
+  return { user }
 }

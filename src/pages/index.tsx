@@ -3,10 +3,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Footer from '@/components/Footer'
-
+import { useContext } from 'react'
+import { AuthContext } from '@/context/auth/AuthContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { signIn } = useContext(AuthContext)
   return (
     <>
       <Head>
@@ -18,6 +20,8 @@ export default function Home() {
       <main className="bg-codelife-green-500 w-full h-[100vh] flex flex-col dark:bg-codelife-black-600">
         <h1 className='font-merry text-codelife-black-600 text-5xl font-bold '>Aprenda a desenvolver websites</h1>
         <p className='mb-8'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
+        <button onClick={() => signIn({ email: "teste@teste.com", password: "123456" })
+        } className='text-lg bg-codelife-green-400 text-codelife-black-700 rounded-sm'>SIGN IN</button>
         <Footer />
       </main>
     </>

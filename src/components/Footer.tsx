@@ -8,7 +8,7 @@ import { AuthContext } from "@/context/auth/AuthContext";
 import { UserPermissions } from "@/@types/user";
 function Footer() {
   const [hydrated, setHydrated] = useState(false);
-  const { user, signIn: signUp } = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   useEffect(() => {
     setHydrated(true);
   }, []);
@@ -105,8 +105,6 @@ function Footer() {
             instagram={{ id: "@CodelifeBR", link: "https://www.instagram.com/codelifebr/" }}
           />
         </div>
-        <button onClick={() => signUp({ email: "teste@teste.com", password: "123456" })
-        }>login</button>
       </footer >) : <></>);
 }
 
