@@ -37,8 +37,8 @@ function Footer() {
             <div className={styles["nav-footer-section"]}>
               <h3>{t("Language")}</h3>
               <ul>
-                <li><Link href="">{t("English")}</Link></li>
-                <li><Link href="">{t("Portuguese")}</Link></li>
+                <li><Link href="/" locale="en">{t("English")}</Link></li>
+                <li><Link href="/" locale ="pt-BR">{t("Portuguese")}</Link></li>
 
               </ul>
             </div>
