@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Footer from '@/components/Footer'
+import NavBar from '@/components/NavBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-codelife-green-500 w-full h-[100vh] flex flex-col">
+        <NavBar />
         <h1 className='font-merry text-codelife-black-600 text-5xl font-bold '>Aprenda a desenvolver websites</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
         <Footer />
