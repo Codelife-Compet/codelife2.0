@@ -24,7 +24,7 @@ body:
      value: '## Descrição da Feature\n\n[Descreva aqui a sua feature detalhadamente]'
  - type: markdown
    atributes:
-    value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários]'
+    value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários] '
    - type: markdown
    atributes :
     value: '## Proposta\n\n[Descreva aqui como essa feature pode ser implementada e como ela funciona]'
