@@ -1,0 +1,53 @@
+# TEMPLATE DE NOVA FEATURE
+
+name: New Feature
+description: Template to create a new feature
+
+title:
+  description: Feature title
+  type: text
+  required: true
+
+description:
+  description: Feature description detailed
+  type: textarea
+  required: true
+
+labels:
+  description: Feature labels
+  type: labels
+  options:
+    - feature
+    - enhancement
+  required: true
+
+assignees:
+  description: Assignees members responsible for the feature
+  type: assignees
+  required: true
+
+projects:
+  description: Project to which this feature is related
+  type: projects
+  required: true
+
+milestone:
+  description: Milestone to which this feature is related
+  type: milestones
+  required: true
+
+motivation:
+  description: Motivation for the feature
+  type: textarea
+
+proposal:
+  description: Proposal for the feature implementation
+  type: textarea
+
+tasks:
+  description: Feature tasks to be done
+  type: checkboxes
+  options:
+    - Tarefa 1
+    - Tarefa 2
+    - Tarefa 3
