@@ -2,11 +2,7 @@ name: New Feature
 description: Template to create a new feature
 title: "[New Feature]: "
 labels: ["enhancement","feature"]
-assignees:
-  - bidwolf
-  - Francis1408
-  - luizleroy01
-  - PedroRonzani18
+assignees: ["bidwolf","Francis1408","luizleroy01","PedroRonzani18"]
 body:
 - type: dropdown
   id: feature
@@ -22,33 +18,19 @@ body:
 - type: markdown
     attributes:
       value: "## Descrição da Feature"
-- type: markdown
-    attributes:
-      value: |
-        [Descreva aqui a sua feature detalhadamente]
+- type: textarea
+  id: descr
+  attributes:
+    label: Feature description
+    description: "The feature Description"
+    value: |
+      1.
+      2.
+      3.
+      ...
+    render: markdown
+  validations:
+    required: true
 - type: markdown
     attributes:
       value: "## Motivação"
-- type: markdown
-    attributes:
-      value: |
-        [Explique por que essa feature é importante e como ela pode ajudar os usuários] 
-- type: markdown
-    attributes:
-      value: "## Proposta"
-- type: markdown
-    attributes:
-      value: |
-        [Descreva aqui como essa feature pode ser implementada e como ela funciona] 
-- type: markdown
-    attributes:
-      value: "## Tarefas"
-- type: markdown
-    attributes:
-      value: |
-        - [ ] Tarefa 1
-        - [ ] Tarefa 2
-        - [ ] Tarefa 3
-- milestone:
-    - Home
- 
