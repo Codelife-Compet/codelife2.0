@@ -1,9 +1,10 @@
 import { FaInstagram } from "react-icons/fa";
 interface InstagramIconProps {
   size?: string | number;
+  id?: string
 }
 
-function InstagramIcon({ size = 24 }: InstagramIconProps) {
+function InstagramIcon({ size = 24, id }: InstagramIconProps) {
   return (
     <div className="inline-block">
       <div className="instagram-icon flex items-center cursor-pointer text-xl text-codelife-black-400 fill-codelife-black-400 hover:bg-gradient-to-r from-instagram-0 via-instagram-1 to-instagram-2 bg-clip-text hover:text-opacity-0">
@@ -21,7 +22,7 @@ function InstagramIcon({ size = 24 }: InstagramIconProps) {
           </defs>
           <FaInstagram className="instagram-gradient cursor-pointer" fontSize={size} />
         </svg>
-        <span className="hidden px-2 sm:block "> @codelifebr</span>
+        {id && <span className="hidden px-2 sm:block "> {id}</span>}
       </div>
     </div>
   );
