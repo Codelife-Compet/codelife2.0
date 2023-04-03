@@ -3,7 +3,6 @@ description: Template to create a new feature
 title: "[DATE]: [FEATURE NAME]"
 labels: ["enhancement","feature"]
 assignees: ["bidwolf","Francis1408","luizleroy01","PedroRonzani18"]
-milestone: v1.0.0
 body:
 - type: dropdown
   id: feature
