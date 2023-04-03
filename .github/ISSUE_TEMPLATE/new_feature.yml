@@ -41,12 +41,3 @@ body:
        List of conditions that your feature must meet to be considered complete:
        1. First Criteria
        2. Second Criteria
-
-- type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Codelife-Compet/codelife2.0/blob/main/CODE_OF_CONDUCT.md)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
