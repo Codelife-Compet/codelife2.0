@@ -20,16 +20,16 @@ body:
   validations:
     required: true
 - type: markdown
-    atributes:
+    attributes:
       value: '## Descrição da Feature\n\n[Descreva aqui a sua feature detalhadamente]'
 - type: markdown
-    atributes:
+    attributes:
       value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários] '
 - type: markdown
-    atributes :
+    attributes :
       value: '## Proposta\n\n[Descreva aqui como essa feature pode ser implementada e como ela funciona]'
 - type: markdown
-    atributes :
+    attributes :
       value: '## Tarefas\n- [ ] Tarefa 1\n- [ ] Tarefa 2\n- [ ] Tarefa 3'
 - milestone:
     - Home
