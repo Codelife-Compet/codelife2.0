@@ -3,6 +3,7 @@ description: Template to create a new feature
 title: "[DATE]: [FEATURE NAME]"
 labels: ["enhancement","feature"]
 assignees: ["bidwolf","Francis1408","luizleroy01","PedroRonzani18"]
+milestone: v1.0.0
 body:
 - type: dropdown
   id: feature
@@ -39,7 +40,8 @@ body:
       "### Acceptance Criteria"
        List of conditions that your feature must meet to be considered complete:
        1. First Criteria
-       2. Second Criteria ...
+       2. Second Criteria
+
 - type: checkboxes
     id: terms
     attributes:
