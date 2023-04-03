@@ -21,16 +21,34 @@ body:
     required: true
 - type: markdown
     attributes:
-      value: '## Descrição da Feature\n\n[Descreva aqui a sua feature detalhadamente]'
+      value: "## Descrição da Feature"
 - type: markdown
     attributes:
-      value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários] '
+      value: |
+        [Descreva aqui a sua feature detalhadamente]
 - type: markdown
-    attributes :
-      value: '## Proposta\n\n[Descreva aqui como essa feature pode ser implementada e como ela funciona]'
+    attributes:
+      value: "## Motivação"
 - type: markdown
-    attributes :
-      value: '## Tarefas\n- [ ] Tarefa 1\n- [ ] Tarefa 2\n- [ ] Tarefa 3'
+    attributes:
+      value: |
+        [Explique por que essa feature é importante e como ela pode ajudar os usuários] 
+- type: markdown
+    attributes:
+      value: "## Proposta"
+- type: markdown
+    attributes:
+      value: |
+        [Descreva aqui como essa feature pode ser implementada e como ela funciona] 
+- type: markdown
+    attributes:
+      value: "## Tarefas"
+- type: markdown
+    attributes:
+      value: |
+        - [ ] Tarefa 1
+        - [ ] Tarefa 2
+        - [ ] Tarefa 3
 - milestone:
     - Home
  
