@@ -1,51 +1,36 @@
 name: New Feature
 description: Template to create a new feature
-
-title:
-  description: Feature title
-  type: text
-  required: true
-
-description:
-  description: Feature description detailed
-  type: textarea
-  required: true
-
-labels:
-  description: Feature labels
-  type: labels
-  options:
-    - feature
-    - enhancement
-  required: true
-
+title: "[New Feature]: "
+labels: ["enhancement","feature"]
 assignees:
-  description: Assignees members responsible for the feature
-  type: assignees
-  required: true
-
-projects:
-  description: Project to which this feature is related
-  type: projects
-  required: true
-
-milestone:
-  description: Milestone to which this feature is related
-  type: milestones
-  required: true
-
-motivation:
-  description: Motivation for the feature
-  type: textarea
-
-proposal:
-  description: Proposal for the feature implementation
-  type: textarea
-
-tasks:
-  description: Feature tasks to be done
-  type: checkboxes
-  options:
-    - Tarefa 1
-    - Tarefa 2
-    - Tarefa 3
+  - bidwolf
+  - Francis1408
+  - luizleroy01
+  - PedroRonzani18
+body:
+ - type: dropdown
+  id: feature
+  attributes:
+    label: What your feature is related?
+    options:
+      - Courses
+      - Backend
+      - UI/UX
+      - Another
+  validations:
+    required: true
+ - type: markdown
+   atributes:
+     value: '## Descrição da Feature\n\n[Descreva aqui a sua feature detalhadamente]'
+ - type: markdown
+   atributes:
+    value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários]'
+   - type: markdown
+   atributes :
+    value: '## Proposta\n\n[Descreva aqui como essa feature pode ser implementada e como ela funciona]'
+ - type: markdown
+   atributes :
+    value: '## Tarefas\n- [ ] Tarefa 1\n- [ ] Tarefa 2\n- [ ] Tarefa 3'
+ - milestone:
+  - Home
+ 
