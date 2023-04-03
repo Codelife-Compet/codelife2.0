@@ -21,13 +21,13 @@ body:
 - type: markdown
   attributes:
     value: |
-      "### Description "
+      ### Description 
       Describe your feature
 
 - type: markdown
   attributes:
     value: |
-      "### Tasks "
+      ### Tasks 
       Your tasks to be done
       - [ ] TASK-1
       - [ ] TASK-2
@@ -36,7 +36,7 @@ body:
 - type: markdown
   attributes:
     value: |
-      "### Acceptance Criteria"
+      ### Acceptance Criteria
        List of conditions that your feature must meet to be considered complete:
        1. First Criteria
        2. Second Criteria
