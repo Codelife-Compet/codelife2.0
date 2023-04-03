@@ -8,7 +8,7 @@ assignees:
   - luizleroy01
   - PedroRonzani18
 body:
- - type: dropdown
+- type: dropdown
   id: feature
   attributes:
     label: What your feature is related?
@@ -19,18 +19,18 @@ body:
       - Another
   validations:
     required: true
- - type: markdown
-   atributes:
-     value: '## Descrição da Feature\n\n[Descreva aqui a sua feature detalhadamente]'
- - type: markdown
-   atributes:
-    value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários] '
-   - type: markdown
-   atributes :
-    value: '## Proposta\n\n[Descreva aqui como essa feature pode ser implementada e como ela funciona]'
- - type: markdown
-   atributes :
-    value: '## Tarefas\n- [ ] Tarefa 1\n- [ ] Tarefa 2\n- [ ] Tarefa 3'
- - milestone:
-  - Home
+- type: markdown
+    atributes:
+      value: '## Descrição da Feature\n\n[Descreva aqui a sua feature detalhadamente]'
+- type: markdown
+    atributes:
+      value: '## Motivação\n\n[Explique por que essa feature é importante e como ela pode ajudar os usuários] '
+- type: markdown
+    atributes :
+      value: '## Proposta\n\n[Descreva aqui como essa feature pode ser implementada e como ela funciona]'
+- type: markdown
+    atributes :
+      value: '## Tarefas\n- [ ] Tarefa 1\n- [ ] Tarefa 2\n- [ ] Tarefa 3'
+- milestone:
+    - Home
  
