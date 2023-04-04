@@ -13,6 +13,8 @@ function Footer() {
     setHydrated(true);
   }, []);
   const { t } = useTranslation()
+
+
   return (
     hydrated ?
       (<footer className={styles.footer}>
