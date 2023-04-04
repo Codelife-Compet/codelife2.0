@@ -1,10 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.instagram-gradient {
-  fill: url(#instagram-gradient);
-}
-
-.instagram-icon:hover .instagram-gradient {
-  fill: url(#instagram-gradient-hover);
-}
