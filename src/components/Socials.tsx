@@ -1,7 +1,11 @@
-import Link from "next/link";
 import React from "react";
-import { FaFacebookSquare, FaGithubSquare, FaLinkedin, FaTwitterSquare, FaYoutube } from "react-icons/fa";
 import InstagramIcon from "./InstagramIcon"
+import styles from "@/styles/Socials.module.css";
+import FacebookIcon from "./FacebookIcon";
+import GithubIcon from "./GithubIcon";
+import YoutubeIcon from "./YoutubeIcon";
+import LinkedinIcon from "./LinkedinIcon";
+import TwitterIcon from "./TwitterIcon";
 interface social {
     link: string
     id?: string
@@ -24,68 +28,68 @@ const Socials: React.FC<SocialProps> = ({
     twitter,
     youtube }) => {
     return (
-        <div className="grid grid-flow-col gap-2 pt-4">
+        <div className={styles["socials-inner-container"]}>
             {
                 facebook &&
-                <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-500">
-                    <Link href={facebook.link} target="_blank">
-                        <div className="flex items-center  hover:text-codelife-blue-500 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-500">
-                            <FaFacebookSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {facebook.id&&<span className="hidden sm:block">{facebook.id}</span>}
+                <i className={`${styles["socials-icon-container"]} ${styles.facebook}`}>
+                    <a href={facebook.link} target="_blank">
+                        <div className={`${styles.facebook}`}>
+                            <FacebookIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {facebook.id && <span className="hidden sm:block pl-2">{facebook.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 youtube &&
-                <i className="px-2  transition-opacity flex justify-center items-center hover:text-codelife-red-500">
-                    <Link href={youtube.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-red-500 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-red-500">
-                            <FaYoutube className={`px-2 ${size == "sm" ? "text-[3rem]" : size == "md" ? "text-[4rem]" : "text-[6rem]"}`} />
-                            {youtube.id&&<span className="hidden sm:block"> {youtube.id}</span>}
+                <i className={`${styles["socials-icon-container"]} ${styles.youtube}`}>
+                    <a href={youtube.link} target="_blank" >
+                        <div className={`${styles.youtube}`}>
+                            <YoutubeIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {youtube.id && <span className="hidden sm:block pl-2"> {youtube.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 instagram &&
-                <i className="px-2 transition-opacity flex justify-center items-center">
-                    <Link href={instagram.link} target="_blank" >
+                <i className={`${styles["socials-icon-container"]}`}>
+                    <a href={instagram.link} target="_blank" >
                         <InstagramIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} id={instagram.id} />
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 github &&
-                <i className="px-2  transition-opacity flex justify-center items-center hover:text-codelife-black-900">
-                    <Link href={github.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-black-900 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-black-900">
-                            <FaGithubSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {github.id&&<span className="hidden sm:block">{github.id}</span>}
+                <i className={`${styles["socials-icon-container"]} ${styles.github}`}>
+                    <a href={github.link} target="_blank" >
+                        <div className={`${styles.github}`}>
+                            <GithubIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {github.id && <span className="hidden sm:block pl-2">{github.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 linkedin &&
-                <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-600">
-                    <Link href={linkedin.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-blue-600 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-600">
-                            <FaLinkedin className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {linkedin.id&&<span className="hidden sm:block">{linkedin.id}</span>}
+                <i className={`${styles["socials-icon-container"]} ${styles.linkedin}`}>
+                    <a href={linkedin.link} target="_blank" >
+                        <div className={`${styles.linkedin}`}>
+                            <LinkedinIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {linkedin.id && <span className="hidden sm:block pl-2">{linkedin.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
             {
                 twitter &&
-                <i className="px-2 transition-opacity flex justify-center items-center hover:text-codelife-blue-400">
-                    <Link href={twitter.link} target="_blank" >
-                        <div className="flex items-center hover:text-codelife-blue-400 text-xl text-codelife-black-400 fill-codelife-black-400 hover:fill-codelife-blue-400">
-                            <FaTwitterSquare className={`px-2 ${size == "sm" ? "text-[2.5rem]" : size == "md" ? "text-[3rem]" : "text-[6rem]"}`} />
-                            {twitter.id&&<span className="hidden sm:block">{twitter.id}</span>}
+                <i className={`${styles["socials-icon-container"]} ${styles.twitter}`}>
+                    <a href={twitter.link} target="_blank" >
+                        <div className={`${styles.twitter}`}>
+                            <TwitterIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
+                            {twitter.id && <span className="hidden sm:block pl-2">{twitter.id}</span>}
                         </div>
-                    </Link>
+                    </a>
                 </i>
             }
         </div>
