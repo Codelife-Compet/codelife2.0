@@ -1,0 +1,17 @@
+name: Labeler
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Labeler
+        uses: actions/labeler@v4
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          config-path: "./.github/labeler.yml"
