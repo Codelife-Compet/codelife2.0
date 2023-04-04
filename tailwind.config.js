@@ -9,8 +9,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-    colors:{
+    extend: {colors:{
       "codelife-green": {
         100: "#d8f7f5",
         200: "#b1f0eb",
@@ -85,14 +84,34 @@ module.exports = {
   800: "#4e1311",
   900: "#270a09"
 },
+"twitter":{
+  100: "#c2e6f2",
+  200: "#9ad9ec",
+  300: "#71cce5",
+  400: "#49c0df",
+  500: "#00aced",
+  600: "#0087b5",
+  700: "#006381",
+  800: "#00484d",
+  900: "#002418"
+}
 },
+
+backgroundImage:{
+  ground:"url('/img/ground.png')",
+},
+
 fontFamily:{
   merry:["Merriweather Sans","Roboto"],
   roboto:["Roboto","Franklin Gothic Medium","Tahoma","sans-serif"]
 },
+
 gradientColorStops:{
   "instagram":['#8B5CF6', '#EC4899', '#F43F5E']
 }
+},
+    
   },
+  variants:[],
   plugins: [],
 }
