@@ -1,4 +1,4 @@
-import { PropsWithChildren, createContext, useEffect, useState } from "react";
+import { PropsWithChildren, createContext, useContext, useEffect, useState } from "react";
 import { setCookie, parseCookies } from "nookies";
 import { User } from "@/@types/user";
 import { recoverUserInformation, signInRequest } from "@/services/auth";
@@ -55,3 +55,4 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     </AuthContext.Provider>
   )
 }
+export const useAuth = ()=>useContext(AuthContext)

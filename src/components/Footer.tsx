@@ -2,14 +2,13 @@ import Link from "next/link";
 import CompetIcon from "./CompetIcon";
 import Socials from "./Socials";
 import styles from '@/styles/Footer.module.css'
-import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AuthContext } from "@/context/auth/AuthContext";
 import { UserPermissions } from "@/@types/user";
-import { InstagramSVGIcon } from "./InstagramSVGIcon";
+import { useAuth } from "@/context/auth/AuthContext";
+import { useEffect, useState } from "react";
 function Footer() {
   const [hydrated, setHydrated] = useState(false);
-  const { user } = useContext(AuthContext)
+  const { user } = useAuth()
   useEffect(() => {
     setHydrated(true);
   }, []);
