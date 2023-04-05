@@ -1,3 +1,3 @@
-export interface SVGIcon extends React.SVGProps<SVGSVGElement> {
+export interface SVGIconProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
 }

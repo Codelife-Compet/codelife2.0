@@ -17,11 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-codelife-green-500 w-full h-[100vh] flex flex-col dark:bg-codelife-black-600">
-        <h1 className='font-merry text-codelife-black-600 text-5xl font-bold '>Aprenda a desenvolver websites</h1>
+      <main className="flex h-[100vh] w-full flex-col bg-codelife-green-500 dark:bg-codelife-black-600">
+        <h1 className='font-merry text-5xl font-bold text-codelife-black-600 '>Aprenda a desenvolver websites</h1>
         <p className='mb-8'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
         <button onClick={() => signIn({ email: "teste@teste.com", password: "123456" })
-        } className='text-lg bg-codelife-green-400 text-codelife-black-700 rounded-sm'>SIGN IN</button>
+        } className='rounded-sm bg-codelife-green-400 text-lg text-codelife-black-700'>SIGN IN</button>
         <Footer />
       </main>
     </>

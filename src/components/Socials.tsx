@@ -1,11 +1,11 @@
 import React from "react";
-import InstagramIcon from "./InstagramIcon"
 import styles from "@/styles/Socials.module.css";
 import FacebookIcon from "./FacebookIcon";
 import GithubIcon from "./GithubIcon";
 import YoutubeIcon from "./YoutubeIcon";
 import LinkedinIcon from "./LinkedinIcon";
 import TwitterIcon from "./TwitterIcon";
+import { InstagramSVGIcon } from "./InstagramSVGIcon";
 interface social {
     link: string
     id?: string
@@ -35,7 +35,7 @@ const Socials: React.FC<SocialProps> = ({
                     <a href={facebook.link} target="_blank">
                         <div className={`${styles.facebook}`}>
                             <FacebookIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
-                            {facebook.id && <span className="hidden sm:block pl-2">{facebook.id}</span>}
+                            {facebook.id && <span className="hidden pl-2 sm:block">{facebook.id}</span>}
                         </div>
                     </a>
                 </i>
@@ -46,7 +46,7 @@ const Socials: React.FC<SocialProps> = ({
                     <a href={youtube.link} target="_blank" >
                         <div className={`${styles.youtube}`}>
                             <YoutubeIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
-                            {youtube.id && <span className="hidden sm:block pl-2"> {youtube.id}</span>}
+                            {youtube.id && <span className="hidden pl-2 sm:block"> {youtube.id}</span>}
                         </div>
                     </a>
                 </i>
@@ -55,7 +55,15 @@ const Socials: React.FC<SocialProps> = ({
                 instagram &&
                 <i className={`${styles["socials-icon-container"]}`}>
                     <a href={instagram.link} target="_blank" >
-                        <InstagramIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} id={instagram.id} />
+                        <div className={styles["instagram-icon-container"]}>
+                            <div className={styles["instagram-icon"]}>
+                                <InstagramSVGIcon
+                                    className={styles["instagram-icon"]}
+                                    size={size == "sm" ? 30 : size == "lg" ? 40 : 80}
+                                />
+                                {instagram.id && <span className={styles["instagram"]}> {instagram.id}</span>}
+                            </div>
+                        </div>
                     </a>
                 </i>
             }
@@ -65,7 +73,7 @@ const Socials: React.FC<SocialProps> = ({
                     <a href={github.link} target="_blank" >
                         <div className={`${styles.github}`}>
                             <GithubIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
-                            {github.id && <span className="hidden sm:block pl-2">{github.id}</span>}
+                            {github.id && <span className="hidden pl-2 sm:block">{github.id}</span>}
                         </div>
                     </a>
                 </i>
@@ -76,7 +84,7 @@ const Socials: React.FC<SocialProps> = ({
                     <a href={linkedin.link} target="_blank" >
                         <div className={`${styles.linkedin}`}>
                             <LinkedinIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
-                            {linkedin.id && <span className="hidden sm:block pl-2">{linkedin.id}</span>}
+                            {linkedin.id && <span className="hidden pl-2 sm:block">{linkedin.id}</span>}
                         </div>
                     </a>
                 </i>
@@ -87,7 +95,7 @@ const Socials: React.FC<SocialProps> = ({
                     <a href={twitter.link} target="_blank" >
                         <div className={`${styles.twitter}`}>
                             <TwitterIcon size={size == "sm" ? 30 : size == "lg" ? 40 : 80} />
-                            {twitter.id && <span className="hidden sm:block pl-2">{twitter.id}</span>}
+                            {twitter.id && <span className="hidden pl-2 sm:block">{twitter.id}</span>}
                         </div>
                     </a>
                 </i>

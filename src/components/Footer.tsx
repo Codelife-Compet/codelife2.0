@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AuthContext } from "@/context/auth/AuthContext";
 import { UserPermissions } from "@/@types/user";
+import { InstagramSVGIcon } from "./InstagramSVGIcon";
 function Footer() {
   const [hydrated, setHydrated] = useState(false);
   const { user } = useContext(AuthContext)
@@ -65,32 +66,32 @@ function Footer() {
             <div className={styles["footer-partners-container"]}>
               <div className={styles["footer-partners-datawheel"]}>
                 <Link href={"https://www.datawheel.us/"} target="_blank">
-                  <span className="text-md font-medium flex justify-center text-codelife-zinc-500 ">
+                  <span className="text-md flex justify-center font-medium text-codelife-zinc-500 ">
                     {t("developed by")}
                   </span>
-                  <img src="/datawheel.svg" alt="Logotipo da Datawheel" width={160} height={160} className="opacity-80 hover:opacity-100 cursor-pointer" />
+                  <img src="/datawheel.svg" alt="Logotipo da Datawheel" width={160} height={160} className="cursor-pointer opacity-80 hover:opacity-100" />
                 </Link>
               </div>
               <div className={styles["footer-partners-helpfull-container"]}>
                 <div className={styles["footer-partners-item"]}>
                   <Link href="https://www.mg.gov.br">
-                    <span className="text-codelife-zinc-400 text-sm font-thin">Governo do Estado de Minas Gerais</span>
+                    <span className="text-sm font-thin text-codelife-zinc-400">Governo do Estado de Minas Gerais</span>
                   </Link>
                 </div>
                 <div className={styles["footer-partners-item"]}>
                   <Link href="http://www.fapemig.br/" target="_blank" rel="noopener noreferrer">
-                    <img src="/fapemig.svg" alt="Logotipo da Fapemig" height={160} width={160} className=" opacity-80 hover:opacity-100 cursor-pointer px-2" />
+                    <img src="/fapemig.svg" alt="Logotipo da Fapemig" height={160} width={160} className=" cursor-pointer px-2 opacity-80 hover:opacity-100" />
                   </Link>
                 </div>
                 <div className={styles["footer-partners-item"]}>
                   <Link href={"http://www.fapemig.br/"} target="_blank" rel="noopener noreferrer" >
-                    <img src="/innpact.svg" alt="Logotipo da Innpact" height={160} width={160} className=" opacity-80 hover:opacity-100 cursor-pointer " />
+                    <img src="/innpact.svg" alt="Logotipo da Innpact" height={160} width={160} className=" cursor-pointer opacity-80 hover:opacity-100 " />
                   </Link>
                 </div>
                 <div className={styles["footer-partners-item"]}>
                   <Link href="https://compet.vercel.app/" target="_blank" rel="noopener noreferrer" className="grid grid-cols-3 items-center justify-items-center">
-                    <CompetIcon className="col-span-1 w-10 sm:w-30" />
-                    <span className="text-sm text-codelife-zinc-400 font-merry pl-2 col-start-2 col-end-4">Compet | CEFET - MG</span>
+                    <CompetIcon className="sm:w-30 col-span-1 w-10" />
+                    <span className="col-start-2 col-end-4 pl-2 font-merry text-sm text-codelife-zinc-400">Compet | CEFET - MG</span>
                   </Link>
                 </div>
               </div>

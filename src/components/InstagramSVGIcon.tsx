@@ -1,6 +1,6 @@
-import { SVGIcon } from "@/@types/SvgIcon";
+import { SVGIconProps } from "@/@types/SvgIcon";
 
-export const InstagramSVGIcon :React.FC<SVGIcon>= ({size=24,...props})=>(
+export const InstagramSVGIcon :React.FC<SVGIconProps>= ({size=24,...props})=>(
   <svg
             width={size}
             height={size}
