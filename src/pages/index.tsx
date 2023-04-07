@@ -3,12 +3,22 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 import { useContext } from 'react'
+import {useState} from 'react'
 import { AuthContext } from '@/context/auth/AuthContext'
+import {ThemeProvider} from 'styled-components';
+import light from '@/context/theme/light';
+import dark from '@/context/theme/dark';
+import GlobalStyle from '@/context/theme/global'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const { signIn } = useContext(AuthContext)
+  const [theme,setTheme] = useState(light)
+  const toggleTheme = () =>{
+    setTheme(theme.title == 'light' ? dark : light);
+  }
   return (
     <>
       <Head>
@@ -17,13 +27,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex h-[100vh] w-full flex-col bg-codelife-green-500 dark:bg-codelife-black-600">
-        <h1 className='font-merry text-5xl font-bold text-codelife-black-600 '>Aprenda a desenvolver websites</h1>
-        <p className='mb-8'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
-        <button onClick={() => signIn({ email: "teste@teste.com", password: "123456" })
-        } className='rounded-sm bg-codelife-green-400 text-lg text-codelife-black-700'>SIGN IN</button>
-        <Footer />
-      </main>
+      <ThemeProvider theme={theme}>
+        <main className="flex h-[100vh] w-full flex-col bg-codelife-green-500 dark:bg-codelife-black-600">
+          
+            <GlobalStyle/>
+            <Header toggleTheme ={toggleTheme}/>
+          
+            <h1 className='font-merry text-5xl font-bold text-codelife-black-600 '>Aprenda a desenvolver websites</h1>
+            <p className='mb-8'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A ex nisi aliquid adipisci, ratione nulla exercitationem porro! Perspiciatis quae voluptatem numquam quis officiis, nobis, quaerat perferendis hic, ad dolore deserunt.</p>
+            <button onClick={() => signIn({ email: "teste@teste.com", password: "123456" })
+            } className='rounded-sm bg-codelife-green-400 text-lg text-codelife-black-700'>SIGN IN</button>
+          <Footer />
+        </main>
+        </ThemeProvider>
+      
+      
     </>
   )
 }
